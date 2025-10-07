@@ -1,0 +1,191 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Header / Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111;  
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;  
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00;  
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(135deg, #ffffff 50%, #111 50%);
+    color: #111;
+    display: flex;
+    justify-content: flex-start; /* Left-aligned */
+    align-items: center;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 600px; /* keeps text from stretching too wide */
+}
+
+/* Water gradient text animation */
+.water-text {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00cfff, #0066ff, #00cfff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: waterMove 3s ease-in-out infinite;
+}
+
+#home p.water-text {
+    font-size: 22px;
+}
+
+/* Water animation keyframes */
+@keyframes waterMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Section Titles */
+h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #111;
+    text-align: center; /* Keep other sections centered */
+}
+
+/* Blog / Events / Videos Containers */
+.blogs, .events-list, .youtube-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Cards for blog / events */
+.blogs .card, .events-list .card, .youtube-videos .card {
+    background-color: white;
+    border: 2px solid #111;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blogs .card:hover, .events-list .card:hover, .youtube-videos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Forms */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #111;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: #111;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #ffcc00;
+    color: #111;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .blogs, .events-list, .youtube-videos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home {
+        justify-content: center; /* center text on small screens */
+        text-align: center;
+    }
+
+    #home h1 {
+        font-size: 36px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+}
