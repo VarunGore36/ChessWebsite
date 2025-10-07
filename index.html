@@ -3,81 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Youtuber</title>
+    <title>KSYG-Chess</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
+
+    <!-- Header -->
     <header>
         <div class="logo">KSYG-Chess</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#youtube">YouTube</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#events">Events</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#events">Events</a></li>
             </ul>
         </nav>
     </header>
 
-   <!-- Hero Section -->
-<section id="home">
-    <div class="hero-content">
-        <h1 class="water-text">Welcome to KSYG-Chess!</h1>
-        <p class="water-text">Your go-to place for chess videos, blogs, and events.</p>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section id="home">
+        <!-- Left Text Side -->
+        <div class="hero-content">
+            <h1 class="water-text">Welcome to KSYG-Chess!</h1>
+            <p class="hero-subtitle">Your go-to place for chess videos, blogs, and events.</p>
 
+            <!-- Main Buttons -->
+            <div class="hero-buttons">
+                <a href="#youtube" class="hero-btn">YouTube</a>
+                <a href="#about" class="hero-btn">About</a>
+                <a href="#events" class="hero-btn">Events</a>
+            </div>
 
-    <!-- YouTube Updates -->
-    <section id="youtube">
-        <h2>Latest YouTube Videos</h2>
-        <div class="youtube-videos">
-            <!-- Embedded videos will go here -->
+            <!-- Social Media & YouTube Subscribers -->
+            <div class="hero-social">
+                <a href="https://instagram.com/ksyg_chess" target="_blank" class="social-btn insta">Instagram</a>
+                <a href="https://discord.gg/ZgsbnPU5" target="_blank" class="social-btn discord">Discord</a>
+                <a href="https://youtube.com/yourchannel" target="_blank" class="social-btn yt">
+                    YouTube: <span id="yt-subs">0</span> subscribers
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Image Side -->
+        <div class="hero-image-container">
+            <img src="images/Logo.png" alt="Chess Hero" class="hero-image">
         </div>
     </section>
 
-    <!-- Blog Preview -->
-    <section id="blog">
-        <h2>Latest Blogs</h2>
-        <div class="blogs">
-            <!-- Blog cards will go here -->
-        </div>
-    </section>
-
-    <!-- Events Preview -->
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <div class="events-list">
-            <!-- Event cards will go here -->
-        </div>
-    </section>
-
-    <!-- About -->
+    <!-- Sample Sections -->
     <section id="about">
         <h2>About</h2>
-        <p>KSYG is a passionate chess YouTuber sharing insights and tutorials.</p>
+        <p>About content goes here...</p>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <section id="youtube">
+        <h2>YouTube</h2>
+        <p>YouTube videos go here...</p>
+    </section>
+
+    <section id="events">
+        <h2>Events</h2>
+        <p>Events content goes here...</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 GeronimoStilton36. All rights reserved.</p>
-        <div class="socials">
-            <!-- Social icons links -->
-        </div>
+        <p>&copy; 2025 KSYG-Chess. All rights reserved.</p>
+        <p><a href="#home">Back to top</a></p>
     </footer>
+
+    <!-- YouTube Subscriber Count Script -->
+    <script>
+    async function getYouTubeSubs() {
+        const API_KEY = 'YOUR_YOUTUBE_API_KEY'; // replace with your API key
+        const CHANNEL_ID = 'YOUR_CHANNEL_ID';   // replace with your channel ID
+        const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const subs = data.items[0].statistics.subscriberCount;
+            document.getElementById('yt-subs').innerText = subs;
+        } catch (err) {
+            console.error('Error fetching subscriber count:', err);
+        }
+    }
+
+    getYouTubeSubs();
+    </script>
+
 </body>
 </html>
