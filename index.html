@@ -10,58 +10,53 @@
 
     <!-- Header -->
     <header>
-        <div class="logo">KSYG-Chess</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#youtube">YouTube</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo-container">
+        <img src="images/logo.png" alt="KSYG-Chess Logo" class="logo-image">
+        <div class="logo-text">
+            <h1 class="water-text">KSYG-Chess</h1>
+            <p>To be decided</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="https://instagram.com/ksyg_chess" target="_blank">Instagram</a></li>
+<li><a href="https://discord.gg/ZgsbnPU5" target="_blank">Discord</a></li>
+
+        </ul>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section id="home">
-        <!-- Left Text Side -->
-        <div class="hero-content">
-            <h1 class="water-text">Welcome to KSYG-Chess!</h1>
-            <p class="hero-subtitle">Your go-to place for chess videos, blogs, and events.</p>
-
-            <!-- Main Buttons -->
-            <div class="hero-buttons">
-                <a href="#youtube" class="hero-btn">YouTube</a>
-                <a href="#about" class="hero-btn">About</a>
-                <a href="#events" class="hero-btn">Events</a>
-            </div>
-
-            <!-- Social Media & YouTube Subscribers -->
-            <div class="hero-social">
-                <a href="https://instagram.com/ksyg_chess" target="_blank" class="social-btn insta">Instagram</a>
-                <a href="https://discord.gg/ZgsbnPU5" target="_blank" class="social-btn discord">Discord</a>
-                <a href="https://youtube.com/yourchannel" target="_blank" class="social-btn yt">
-                    YouTube: <span id="yt-subs">0</span> subscribers
-                </a>
-            </div>
+        <div class="hero-left">
+            <img src="images/Logo.png" alt="KSYG Hero" class="hero-image">
         </div>
-
-        <!-- Right Image Side -->
-        <div class="hero-image-container">
-            <img src="images/Logo.png" alt="Chess Hero" class="hero-image">
+        <div class="hero-right">
+            <h1 class="water-text">Hi, my name is KSYG!</h1>
+            <p>Welcome to KSYG-Chess. Your go-to place for chess videos, blogs, and events.</p>
+            <p>I teach chess online and share strategies, tutorials, and my experiences with the community.</p>
         </div>
     </section>
 
-    <!-- Sample Sections -->
+    <!-- YouTube Featured Section -->
+<section id="youtube">
+    <h2>Watch My Latest Video</h2>
+    <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank" class="youtube-featured-link">
+        <img src="images/Ytlogo.jpg" alt="Featured Video" class="youtube-image">
+    </a>
+</section>
+
+
+    <!-- About Section -->
     <section id="about">
         <h2>About</h2>
         <p>About content goes here...</p>
     </section>
 
-    <section id="youtube">
-        <h2>YouTube</h2>
-        <p>YouTube videos go here...</p>
-    </section>
-
+    <!-- Events Section -->
     <section id="events">
         <h2>Events</h2>
         <p>Events content goes here...</p>
@@ -70,28 +65,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 KSYG-Chess. All rights reserved.</p>
-        <p><a href="#home">Back to top</a></p>
     </footer>
-
-    <!-- YouTube Subscriber Count Script -->
-    <script>
-    async function getYouTubeSubs() {
-        const API_KEY = 'YOUR_YOUTUBE_API_KEY'; // replace with your API key
-        const CHANNEL_ID = 'YOUR_CHANNEL_ID';   // replace with your channel ID
-        const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`;
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            const subs = data.items[0].statistics.subscriberCount;
-            document.getElementById('yt-subs').innerText = subs;
-        } catch (err) {
-            console.error('Error fetching subscriber count:', err);
-        }
-    }
-
-    getYouTubeSubs();
-    </script>
 
 </body>
 </html>

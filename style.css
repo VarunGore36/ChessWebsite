@@ -5,227 +5,168 @@
     box-sizing: border-box;
 }
 
-/* Body - Starry Background */
+/* Body */
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: white;
-    background-color: #000;
-    background-image: 
-        radial-gradient(#fff 1px, transparent 1px),
-        radial-gradient(#fff 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
-}
-
-/* Header / Navbar */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
     background-color: #111;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    color: #fff;
 }
 
-header .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #ffcc00;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #ffcc00;
-}
-
-/* Hero Section - Split Silver/Gray & Black */
-#home {
-    display: flex;
-    min-height: 80vh;
-    overflow: hidden;
-}
-
-/* Left Text Side */
-.hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;  /* center text and buttons horizontally */
-    padding: 40px 50px 50px 50px;
-    background: linear-gradient(135deg, #c0c0c0, #e0e0e0); /* silver/gray gradient */
-    color: #111;
-    gap: 10px;
-}
-
-/* Hero Title - Water Gradient Wavy */
+/* Water Text Animation */
 .water-text {
-    font-size: 56px;
     font-weight: bold;
+    font-size: 48px;
     background: linear-gradient(90deg, #00cfff, #0066ff, #00cfff);
     background-size: 200% 200%;
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: waterMove 3s ease-in-out infinite;
 }
 
-/* Hero Subtitle - Shiny Black Wavy */
-.hero-subtitle {
-    font-size: 26px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #000000, #555555, #000000);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: waveShine 3s ease-in-out infinite;
-    margin-top: 10px;
-}
-
-/* Main Hero Buttons */
-.hero-buttons {
-    margin-top: 30px; 
-    display: flex;
-    justify-content: center; 
-    width: 100%;
-    gap: 20px;
-}
-
-.hero-btn {
-    padding: 12px 25px;
-    background-color: lab(100% 0.01 -0.01);
-    color: hsl(40, 3%, 17%);
-    border: 2px solid #ffcc00;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-    background-color: #ffcc00;
-    color: #111;
-}
-
-/* Social Media Buttons */
-.hero-social {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.social-btn {
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    color: white;
-    transition: 0.3s;
-}
-
-.social-btn.insta { background: #E1306C; }
-.social-btn.insta:hover { background: #ff66aa; }
-
-.social-btn.discord { background: #1DA1F2; }
-.social-btn.discord:hover { background: #66c2ff; }
-
-.social-btn.yt { background: #FF0000; }
-.social-btn.yt:hover { background: #ff6666; }
-
-/* Right Image Side */
-.hero-image-container {
-    flex: 1;
-    background: #111; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 400px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(255,255,255,0.2);
-    object-fit: cover;
-    animation: imageFloat 5s ease-in-out infinite;
-}
-
-/* Animations */
 @keyframes waterMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-@keyframes waveShine {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    background: #111;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
-@keyframes imageFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image { width: 60px; height: auto; }
+
+.logo-text p { font-size: 14px; color: #aaa; }
+
+/* Header Navigation Links */
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover { 
+    color: #ffcc00; 
+}
+
+/* Social Buttons in Header */
+.social-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+    color: white;
+}
+
+
+/* Hero Section */
+#home {
+    display: flex;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    padding: 20px;
+}
+
+/* Hero Image Float Animation */
+@keyframes floatImage {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(-1deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    75% { transform: translateY(10px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-image {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.hero-right p { font-size: 18px; line-height: 1.6; }
+
+/* YouTube Featured Section */
+#youtube {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+}
+
+.youtube-featured-link {
+    display: inline-block;
+    position: relative;
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.youtube-featured-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.youtube-image {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
 }
 
 /* Section Titles */
 h2 {
-    margin-bottom: 30px;
     font-size: 36px;
-    color: #111;
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 20px;
     text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
+    #home { flex-direction: column-reverse; }
 
-    #home {
-        flex-direction: column;
-        text-align: center;
-    }
+    .hero-left, .hero-right { width: 100%; text-align: center; }
 
-    .hero-content, .hero-image-container {
-        flex: unset;
-        width: 100%;
-    }
+    .hero-image { width: 70%; margin: auto; }
 
-    .hero-image {
-        width: 90%;
-        margin-top: 15px;
-    }
-
-    #home h1 {
-        font-size: 48px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
+    .youtube-image { width: 90%; height: auto; }
 }
